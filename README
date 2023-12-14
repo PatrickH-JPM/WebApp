@@ -1,0 +1,5 @@
+commande pour lancer le server symfony : symfony server:start
+commande pour lancer : npm run watch
+
+lancer 2 terminal avec les deux cmd
+
