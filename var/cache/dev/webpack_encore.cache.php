@@ -13,7 +13,7 @@ return [[
         'app' => [
             'js' => [
                 '/build/runtime.js',
-                '/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_react-dom_client_js-n-857443.js',
+                '/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_react-dom_client_js-n-7f2255.js',
                 '/build/app.js',
             ],
             'css' => [
