@@ -1,5 +1,6 @@
 stages:
   - build
+  - deploy_server
   - test
   - deploy
 
@@ -8,8 +9,20 @@ build-job:
   script:
     - echo "Hello, $GITLAB_USER_LOGIN!"
 
-test-job1:
-  stage: test
+deploy_server:
+  stage: deploy_server
+  image: php:latest
+  services:
+    - mysql:latest
+  before_script:
+    - apt-get update -yqq
+    - apt-get install git -yqq
+    - apt-get install nodejs -yqq
+    - apt-get install npm -yqq
+    - docker-php-ext-install pdo_mysql
+    - curl -sS https://getcomposer.org/installer | php
+    - mv composer.phar /usr/local/bin/composer
+    - composer global require symfony/cli
   script:
     - composer require symfony/webpack-encore-bundle
     - npm install
